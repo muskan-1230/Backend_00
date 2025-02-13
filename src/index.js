@@ -1,22 +1,27 @@
-// require('dotenv').config({path: './env'})
-
-import dotenv from "dotenv";
+// require("dotenv").config({ path: "./env" });
+import dotenv from ".env";
+dotenv.config();
 
 // import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
-
+import express from "express";
 import connectDB from "./db/index.js";
 
-// connectDB()
+const app = express();
 
-dotenv.config({
-  path: "./env",
+const PORT = process.env.PORT || 3000;
+
+connectDB();
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
 
 /*
 
 import express from "express";
 const app = express()(
+ 
   // always try catch me wrap kro ya promises use kro
   // database is always in another continent , so use async await
 
