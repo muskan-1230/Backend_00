@@ -1,21 +1,49 @@
 // require("dotenv").config({ path: "./env" });
-import dotenv from ".env";
+import dotenv from "dotenv";
 dotenv.config();
 
-// import mongoose from "mongoose";
+import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
 import express from "express";
 import connectDB from "./db/index.js";
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
-connectDB();
+// console.log(process.env.MONGO_URI);  // you cant do this as port is in env file and you cannot directly console the variables stored in env file 
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-});
+connectDB()
+.then(()=>{
+
+  app.on("error", (error) => {
+    console.log("ERRORRRR", error);
+    throw error;
+    });
+
+  app.listen(PORT , ()=>{
+    console.log(`Server is running at port : ${PORT}`);
+  })
+ 
+})
+.catch((err)=>{
+  console.log("MONGO db connection failed!!!!!",err)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 

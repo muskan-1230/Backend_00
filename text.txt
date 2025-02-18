@@ -1,0 +1,3 @@
+PORT=8000
+MONGODB_URI=mongodb+srv://muskanjain120805:Db%408228musk@cluster0.optsv.mongodb.net/MyDataBase1?retryWrites=true&w=majority
+DB_NAME=AmazeTube
