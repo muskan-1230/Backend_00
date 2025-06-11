@@ -1,7 +1,7 @@
 // require("dotenv").config({ path: "./env" });
 import dotenv from "dotenv";
 dotenv.config();
-
+console.log("✅ MONGODB_URI:", process.env.MONGODB_URI);
 import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
 import express from "express";
