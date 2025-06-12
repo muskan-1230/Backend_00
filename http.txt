@@ -1,0 +1,59 @@
+http notes : hitesh chowdary linkedin 
+
+HYPER TEXT TRANSFER PROTOCOL:
+
+server (client) ---->  server(server)
+url/urn/uri 
+
+HEADERS: 
+   (metadata - key value pair)
+   caching , authentictaion , manage state 
+   x -prefix (deprecated)
+
+   request headers -> from client
+   response headers -> from server
+   represenation headers -> encodinh/ compressed
+   payload headers -> data (any data -> email , name , id , ...)
+
+   Most common headers :
+   1.accept : application / json
+   2.user-agent
+   3.authorization: bearer 
+   4.content-type
+   5.cookie
+   6.cache control
+
+   Cors and security headers
+
+
+HTTP METHODS :
+basic sets of operations thta can be used to interact woth server 
+    GET - retreive a resourse
+    HEAD - no message body(resonse headers only)
+    OPTIONS - what operations are available
+    TRACE - loopback test(get some data)
+    DELETE - remove a resourse
+    PUT - replace a resourse
+    POST - interact with resourse(mostly add)
+    PATCH - chmage part of resourse
+
+HTTP SATAUS CODE :
+    1xx - information 
+    2xx - success
+    3xx - redirection 
+    4xx - client error 
+    5xx - server error 
+    
+    100 continue
+    102 processing 
+    200 ok
+    201 created
+    202 accepted
+    307 temporary redirection
+    308 permanent redirection
+    400 bad request
+    401 unauthorized
+    402 payment requiered
+    404 not found
+    500 internal server error
+    504 gateway time out 
