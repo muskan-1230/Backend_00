@@ -5,6 +5,7 @@ console.log("✅ MONGODB_URI:", process.env.MONGODB_URI);
 import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
 import express from "express";
+// import { app } from "./app.js";
 import connectDB from "./db/index.js";
 
 const app = express();
@@ -14,21 +15,21 @@ const PORT = process.env.PORT || 8000;
 // console.log(process.env.MONGO_URI);  // you cant do this as port is in env file and you cannot directly console the variables stored in env file 
 
 connectDB()
-.then(()=>{
+    .then(() => {
 
-  app.on("error", (error) => {
-    console.log("ERRORRRR", error);
-    throw error;
-    });
+        app.on("error", (error) => {
+            console.log("ERRORRRR", error);
+            throw error;
+        });
 
-  app.listen(PORT , ()=>{
-    console.log(`Server is running at port : ${PORT}`);
-  })
- 
-})
-.catch((err)=>{
-  console.log("MONGO db connection failed!!!!!",err)
-})
+        app.listen(PORT, () => {
+            console.log(`Server is running at port : ${PORT}`);
+        })
+
+    })
+    .catch((err) => {
+        console.log("MONGO db connection failed!!!!!", err)
+    })
 
 
 
